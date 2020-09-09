@@ -1,9 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
-        ClassList classList = new ClassList();
-        classList.addFirst(123);
-        classList.addFirst("asdf");
-        classList.printAll();
+        Stacks stacks = new Stacks(10);
+        stacks.add("Hello".toCharArray());
+//        stacks.add("e");
+//        stacks.add("l");
+//        stacks.add("l");
+//        stacks.add("o");
+
+
+        while(!stacks.isEmpty()){
+            System.out.print(stacks.pop());
+        }
+
+        //System.out.println(stacks.size());
+
     }
 }

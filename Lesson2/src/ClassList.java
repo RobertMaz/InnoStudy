@@ -1,12 +1,35 @@
 public class ClassList {
     Obj hand;
+    Obj last;
     public int size = 0;
 
     ClassList() {
         hand = null;
+        last = null;
+    }
+
+    public void addFirst(Object data) {
+        Obj obj = new Obj(data);
+        if (isEmpty())
+            last = obj;
+        obj.next = hand;
+        hand = obj;
+        size++;
+    }
+
+    public void addLast(Object data) {
+        Obj obj = new Obj(data);
+        if (isEmpty()) {
+            hand = obj;
+        } else {
+            last.next = obj;
+            last = obj;
+        }
+        size++;
     }
 
     public boolean isEmpty() {
+
         return hand == null;
     }
 
@@ -42,21 +65,12 @@ public class ClassList {
                 current = current.next;
             }
         }
-        if (current == hand){
+        if (current == hand) {
             hand = hand.next;
-        }
-        else
+        } else
             previous.next = current.next;
 
         return current;
-    }
-
-
-    public void addFirst(Object data) {
-        size++;
-        Obj obj = new Obj(data, hand);
-        obj.next = hand;
-        hand = obj;
     }
 
     public Obj removeFirst() {
@@ -66,9 +80,10 @@ public class ClassList {
     }
 
     public void printAll() {
-        while (hand != null) {
-            System.out.println(hand.data);
-            hand = hand.next;
+        Obj current = hand;
+        while(current != null){
+            System.out.println(current.data);
+            current = current.next;
         }
     }
 }
