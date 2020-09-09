@@ -18,15 +18,18 @@ public class Main implements Extractable {
         if (number < 2) throw new IllegalArgumentException();
         int[] array = new int[10];
         int countArray = 0;
+
         for (int i = 2; i < number; i++) {
-            boolean flag = true;
+            boolean isNotFind = true;
+
             for (int j = 2; j <= i; j++) {
                 if (i % j == 0 && i != j) {
-                    flag = false;
+                    isNotFind = false;
                     break;
                 }
             }
-            if (flag) {
+
+            if (isNotFind) {
                 if (countArray >= array.length) {
                     array = Arrays.copyOf(array, countArray * 2);
                 }
@@ -34,7 +37,9 @@ public class Main implements Extractable {
             }
         }
         int[] newArray = new int[countArray];
-        if (countArray >= 0) System.arraycopy(array, 0, newArray, 0, countArray);
+        if (countArray >= 0) {
+            System.arraycopy(array, 0, newArray, 0, countArray);
+        }
         return newArray;
     }
 }
