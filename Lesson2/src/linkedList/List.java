@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.Objects;
+
 public class List {
     private Node head;
     private int size;
@@ -85,4 +87,35 @@ public class List {
         }
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        List list = (List) o;
+        if (size != list.size) {
+            return false;
+        }
+        Node node = head;
+        Node node2 = list.head;
+        while (node != null) {
+            if (node.getData() != node2.getData()) {
+                return false;
+            }
+            node = node.getNext();
+            node2 = node2.getNext();
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hashcode = 1;
+        Node node = head;
+        while(node != null){
+            hashcode *= Objects.hashCode(node);
+            node = node.getNext();
+        }
+        return hashcode;
+    }
 }
