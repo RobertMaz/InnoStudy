@@ -13,7 +13,7 @@ public class Select implements Selectable {
             throw new IllegalArgumentException();
         }
 
-        int[] array = RandomNumber.getRandomNumbers(10, n);
+        int[] array = RandomNumber.getRandomNumbers(30, n);
 
         for (int i = 0; i < n; i++) {
             if (array[i] < 0) {
@@ -27,7 +27,10 @@ public class Select implements Selectable {
                 System.out.println(array[i]);
             }
 
-            if (number % (integerNumber * 10) > integerNumber) {
+            if (number % (integerNumber + 10) > integerNumber) {
+                System.out.println(number);
+                System.out.println(number % (integerNumber * 10));
+                System.out.println(integerNumber);
                 arrayDynamic.add(array[i]);
             }
         }

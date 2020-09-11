@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Select select = new Select();
-        System.out.println(Arrays.toString(select.program("    N=10")));
+        System.out.println(Arrays.toString(select.program("    N=42")));
 
     }
 
