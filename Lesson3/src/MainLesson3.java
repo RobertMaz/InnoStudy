@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class Main implements Extractable {
+public class MainLesson3 implements Extractable {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Main().extract(99)));
+        System.out.println(Arrays.toString(new MainLesson3().extract(99)));
     }
 
     /**
