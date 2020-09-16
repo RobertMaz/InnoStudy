@@ -24,13 +24,16 @@ public class Select implements Selectable {
             int integerNumber = (int) number;
 
             if (integerNumber * integerNumber == array[i]) {
-                System.out.println(array[i]);
+//                System.out.println(array[i]);
             }
+            System.out.println(number);
+            System.out.println((number % (integerNumber)));
+            System.out.println(integerNumber);
 
             if (number % (integerNumber + 10) > integerNumber) {
-                System.out.println(number);
-                System.out.println(number % (integerNumber * 10));
-                System.out.println(integerNumber);
+//                System.out.println(number);
+//                System.out.println(number % (integerNumber * 10));
+//                System.out.println(integerNumber);
                 arrayDynamic.add(array[i]);
             }
         }
